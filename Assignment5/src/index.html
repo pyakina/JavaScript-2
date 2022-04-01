@@ -1,0 +1,96 @@
+<meta charset="UTF-8">
+<div id="app">
+    <div v-for="item of products">
+        <p>Название товара: {{ item.title }}</p>
+        <p>Стоимость товара: {{ item.price }}</p>
+        <img width="200" :src="item.img" :alt="item.title">
+        <button @click="addProduct(item)">Добавить в корзину</button>
+        <hr>
+    </div>
+    <hr>
+    <h1>Привет, {{ name }}!</h1>
+    <a :href="link">Перейти в поисковик</a>
+    <button @click="counter++">OK</button>
+    <span>Счетик = {{ counter }}</span>
+    <hr>
+    <h2>{{ sayHello() }}</h2>
+    <button @click="increase(forCounter)">Запустить счетчик</button>
+    <hr>
+    <div v-show="show">
+        <h2 v-if="show">Text is visible</h2>
+        <h2 v-else="show">Text is not visible</h2>
+    </div>
+    <button @click="show=!show">Show(Hide)</button>
+    <hr>
+    <p>{{ counter > 10 ? 'Больше 10' : 'Меньше 10' }}</p>
+
+    <p @mousemove="getCoordinates()">Some long long text {{ x }}/ {{ y }}
+        <span @mousemove.stop>в этом тексте событие отключено</span>
+    </p>
+    <hr>
+    <input type="text" v-model.lazy="name">
+    <hr>
+    <div v-html="completeElement"></div>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    const vue = new Vue({
+        el: "#app",
+        data:{
+            name: 'Иван',
+            link: 'https://google.com',
+            counter: 0,
+            forCounter: 2,
+            show: false,
+            x: 0,
+            y: 0,
+            completeElement: '<a href="https://google.com">Поисковик</a>',
+            cartProducts:[],
+            products:[
+                {
+                    title:'Audi',
+                    price:1000,
+                    img: "img/audi.jpg"
+                },
+                {
+                    title:'BMW',
+                    price:1200,
+                    img: "img/bmw.jpg"
+                },
+                {
+                    title:'VW',
+                    price:900,
+                    img: "img/vw.jpg"
+                },
+                {
+                    title:'Skoda',
+                    price:1000,
+                    img: "img/skoda.jpg"
+                }
+            ]
+        },
+        methods:{
+            sayHello(){
+                return `Добрый день, ${this.name}`;
+            },
+            increase(step){
+                this.counter += step;
+            },
+            getCoordinates(){
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            addProduct(item){
+                let find = this.cartProducts.find(el=>el.title == item.title);
+                if(find){
+                    find.quantity++;
+                }else{
+                    let itemCart = Object.assign(item,{quantity:1});
+                    this.cartProducts.push(itemCart);
+                }
+                console.log(this.cartProducts);
+            }
+        }
+    })
+</script>
