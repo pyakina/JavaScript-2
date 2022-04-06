@@ -1,0 +1,32 @@
+.box {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+input, textarea {
+background-color: #ccc;
+padding: 10px;
+border: solid 1px transparent;
+margin-bottom: 20px;
+}
+
+input:invalid {
+border: red solid 3px;
+}
+input:valid {
+background-color: rgb(162, 253, 87);
+}
+.submit-btn {
+font-size: 28px;
+    background-color: blueviolet;
+    color: #fff;
+    border: solid 5px transparent;
+    padding: 15px;
+}
+.submit-btn:hover {
+    background-color: transparent;
+    border: solid 5px blueviolet;
+    color: blueviolet;
+}

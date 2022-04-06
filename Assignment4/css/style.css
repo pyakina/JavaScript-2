@@ -1,0 +1,152 @@
+* {
+    margin: 0 auto;
+}
+header {
+display: flex;
+min-height: 70px;
+justify-content: space-between;
+align-items: center;
+margin: 0 0 50px;
+background-color: coral;
+
+}
+.cart-wrp{
+max-width: 320px;
+width: 100%;
+    position: relative;
+}
+.cart{
+    max-width: 320px;
+    width: 100%;
+    min-height: 100px;
+    background-color: #fff;
+    border: solid 1px #ccc ;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    position: absolute;
+    top:55px;
+    right: 90px;
+    }
+
+.logo,.cart-button{
+font-size: 24px;
+line-height: 24px;
+padding: 10px;
+background-color: #fff;
+border: none;
+border-radius: 5px;
+transition: all ease-in-out .4s;
+cursor: pointer;
+}
+.cart-button:hover, .logo:hover{
+    color: #fff;
+    background-color: rgb(87, 87, 87);
+    
+}
+.cart-button:active{
+color: #000;
+background-color: #fff;
+    border: solid 1px #000;
+}
+.goods-list {
+    display:flex;
+    max-width: 1140px;
+    width: 100%;
+    min-height: 500px;
+    background-color: aquamarine;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.cart-item-head, .cart-item-bottom{
+display: flex;
+flex-direction: column;
+}
+.cart-item{
+display: flex;
+justify-content: space-between;
+}
+.hidden {
+    display:none;
+}
+.goods-item {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 200px;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    margin: 0 10px;
+}
+
+.goods-item-img {
+    display: block;
+    max-width: 200px;
+    width: 100%;
+}
+
+.goods-item-title {
+    display: block;
+    margin-top: 20px;
+}
+
+.goods-item-price {
+    display: block;
+    align-self: center;
+    color: brown;
+    margin: 20px 0;
+}
+.add-to-cart{
+padding: 5px;
+color: #fff;
+background-color: #000;
+border: none;
+opacity: 0.8;
+}
+.add-to-cart:hover{
+    color: #fff;
+    background-color: red;
+}
+.add-to-cart:active{
+    color: #fff;
+    background-color: #000;
+    opacity: 1;
+}
+.delete{
+    width: 50px;
+    font-size: 18px;
+    line-height: 16px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #ccc ;
+}
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: #fafafa;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+.search-form{
+    position: relative;
+    margin-right: 50px;
+    display: inline-block;
+}
+.goods-search:focus{
+    outline: none;
+}
+.goods-search {
+    box-sizing: border-box;
+    width: 200px;
+    color: #fafafa;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fafafa;
+}

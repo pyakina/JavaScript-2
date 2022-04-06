@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShop</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">E-shop</div>
+        
+            <compfilter></compfilter>
+            <div class="cart-wrp">
+                <button @click="showCart=!showCart"  class="cart-button" type="button">Корзина</button>
+                <cart :cart-items="cartItems" :img="imgCart" :visibility="showCart" @remove="remove"></cart>
+            </div>
+        
+        </header>
+        <main>
+        <products :products="filtered" :img="imgProduct" @add-product="addProduct"></products>
+           <!--<div class="goods-list">
+                <div class="product-item" v-for="product of filtered" :key="product.id_product">
+                    <img :src="imgCatalog" alt="Some img">
+                    <div class="desc">
+                        <h3 class="goods-item-title">{{product.product_name}}</h3>
+                        <p class="goods-item-price">{{product.price}} $</p>
+                        <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                    </div>
+                </div>
+            </div>--> 
+        </main>
+    </div>
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="vue.js"></script>
+    <script src="filterComp.js"></script>
+    <script src="cartComp.js"></script>
+    <script src="productComp.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
